@@ -35,7 +35,7 @@ The system will then:
 - 🕹️ **Gamified UI**: Roadmap shown as a game like journey
 - 📊 **Progress Tracking**: Mark completed steps and visualize what's next
 - 🏆 **Leaderboards**: Compete with others by domain, track streaks and goals
-- 🤖 **AI Guidance (Coming Soon)**:
+- 🤖 **AI Guidance**:
   - Suggests paths from your interests
   - Adapts based on feedback and progress
 
@@ -66,7 +66,6 @@ The system will then:
 
 ## 🔮 Future Scope
 
-- 🔌 Integrate OpenAI/LLMs for real-time smart recommendations
 - 🗣️ Community forums for peer support and Q&A
 - 🤝 Mentor-connect feature for guided learning
 
