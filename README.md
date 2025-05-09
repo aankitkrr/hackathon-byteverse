@@ -8,25 +8,21 @@ Career Roadmap Builder is your personal roadmap generator for achieving career g
 
 - Analyzes your hobbies and inclinations
 - Recommends tailored paths
-- Adapts to your progress
 
 ## 🔧 How It Works
 
 Users input:
 
 - 🎯 Their **career goal**
-- 🏢 **Target company** (optional)
 - ⏳ **Available time**
 - 🧠 **Current skill level / background**
-- ⚠️ **Areas needing extra support**
+- ⚠️ **Total Duration**
 
 The system will then:
 
 - ✅ Generate a **step-by-step roadmap**
-- 📚 Suggest **high-quality, affordable resources** (courses, books, tutorials)
 - 🕒 Allocate **time durations** to each stage
 - 🧩 Include **checkpoints, milestones, and revision breaks**
-- 🧹 Allow filtering by **cost, difficulty, time**
 - 🔄 Keep content updated with the **latest trends & skills**
 
 
@@ -37,7 +33,6 @@ The system will then:
 - 🏆 **Leaderboards**: Compete with others by domain, track streaks and goals
 - 🤖 **AI Guidance**:
   - Suggests paths from your interests
-  - Adapts based on feedback and progress
 
 ## 🏗️ Technical Implementation (MERN Stack)
 
@@ -68,13 +63,6 @@ The system will then:
 
 - 🗣️ Community forums for peer support and Q&A
 - 🤝 Mentor-connect feature for guided learning
-
-## 📫 Contact
-
-Built by: 
-Team Leader and backend developer: Ankit Kumar
-Frontend developer: Nandini Kumari
-Database and API calls manager: Vansh Gupta
 
 
 # roadmap-repo
