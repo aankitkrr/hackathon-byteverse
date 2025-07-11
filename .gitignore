@@ -1,0 +1,27 @@
+/HackathonBackend/src/config
+/HackathonBackend/dist
+/HackathonBackend/node_modules
+/HackathonBackend/src/config.ts
+# Logs
+HackathonProject/logs
+HackathonProject/*.log
+HackathonProject/npm-debug.log*
+HackathonProject/yarn-debug.log*
+HackathonProject/yarn-error.log*
+HackathonProject/pnpm-debug.log*
+HackathonProject/lerna-debug.log*
+HackathonProject/node_modules
+HackathonProject/dist
+HackathonProject/dist-ssr
+HackathonProject/*.local
+
+# Editor directories and files
+HackathonProject/.vscode/*
+HackathonProject/!.vscode/extensions.json
+HackathonProject/.idea
+HackathonProject/.DS_Store
+HackathonProject/*.suo
+HackathonProject/*.ntvs*
+HackathonProject/*.njsproj
+HackathonProject/*.sln
+HackathonProject/*.sw?
