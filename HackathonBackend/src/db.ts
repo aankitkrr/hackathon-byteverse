@@ -4,9 +4,9 @@ import { Data_base_url } from "./config";
 mongoose.connect( Data_base_url );
 
 const UserSchema = new Schema({
-    username : {type : String, unique : true},
+    username: { type: String, required: true, unique: true, minlength: 3},
     password : String,
-    email : String
+    email: { type: String, unique: true, required: true }
 })
 
 // user ka roadmap 

@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import FormBox from "../components/FormBox";
 import { useAuth } from "../context/AuthContext";
-import { set } from "mongoose";
+import GoogleLoginButton from "../components/GoogleButton";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ const LoginPage = () => {
       }
 
       localStorage.setItem("token", data.token);
+      toast.success("Logged In sucessfully");
       setIsLoggedIn(true);
       setLoading(false);
       navigate("/");
@@ -52,10 +54,10 @@ const LoginPage = () => {
   return (
     <div className="flex flex-col h-screen bg-gray-200">
       <Navbar />
-      {(loading ? <div className="flex justify-center items-center h-full">
+      <section className="flex-1 flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-white pb-4">
+        {(loading ? <div className="flex justify-center items-center h-full">
             <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-blue-600 border-solid"></div>
           </div> :
-      <section className="flex-1 flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-white pb-4">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto sm:max-w-md">
           <div className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             <img className="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo" />
@@ -67,6 +69,9 @@ const LoginPage = () => {
               Enter into your account
             </h1>
 
+            <GoogleLoginButton />
+            <div className="text-sm text-center text-gray-500 dark:text-gray-400">or</div>
+            
             <form onSubmit={handleSubmit} className="space-y-6">
               <FormBox label="Username"
                 type="text"
@@ -106,8 +111,8 @@ const LoginPage = () => {
               </p>
             </form>
           </div>
-        </div>
-      </section>)}
+        </div>)}
+      </section>
 
       <footer className="mt-auto py-6 pt-3 bg-slate-400 dark:bg-gray-900">
         <p className="dark:text-white text-center">© 2025 RoadMapr. All rights reserved.</p>

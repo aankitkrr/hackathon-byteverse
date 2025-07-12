@@ -18,7 +18,7 @@ export async function generateFromGemini({ goal, level, skills, availableTime, d
 
   const userPrompt = `You are a career roadmap planner. Return VALID JSON ONLY.
 
-  Create a learning roadmap for someone wanting to become a "${goal}".
+  Create a solid in depth with good steps learning roadmap for someone wanting to become a "${goal}".
   The user is at "${level}" level, knows [${skillsArray.join(", ") || "nothing"}], 
   has ${availableTime} hours/week, and ${duration} months total.
   

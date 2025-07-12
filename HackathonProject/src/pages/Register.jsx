@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import FormBox from "../components/FormBox";
+import GoogleLoginButton from "../components/GoogleButton";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -126,6 +127,9 @@ const RegisterPage = () => {
                 {globalError}
               </div>
             )}
+
+            <GoogleLoginButton />
+            <div className="text-sm text-center text-gray-500 dark:text-gray-400">or</div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {fields.map((field) => (
