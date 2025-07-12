@@ -1,7 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
 import { Data_base_url } from "./config";
 
-mongoose.connect( Data_base_url );
+mongoose.connect( Data_base_url! );
 
 const UserSchema = new Schema({
     username: { type: String, required: true, unique: true, minlength: 3},

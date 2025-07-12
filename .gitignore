@@ -1,7 +1,6 @@
 /HackathonBackend/src/config
 /HackathonBackend/dist
 /HackathonBackend/node_modules
-/HackathonBackend/src/config.ts
 /HackathonBackend/.env
 # Logs
 HackathonProject/logs
