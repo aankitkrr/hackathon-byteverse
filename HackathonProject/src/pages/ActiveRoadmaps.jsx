@@ -18,7 +18,7 @@ const MyRoadmaps = () => {
     const fetchRoadmaps = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:3000/api/v1/roadmap", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/roadmap`, {
           headers: { authorization: token },
         });
         setRoadmaps(res.data.roadmap);
@@ -34,7 +34,7 @@ const MyRoadmaps = () => {
 
   const deleteRoadmap = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/v1/roadmap/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/v1/roadmap/${id}`, {
         headers: { authorization: localStorage.getItem("token") },
       });
       setRoadmaps((prev) => prev.filter((r) => r._id !== id)); // Auto-updates frontend

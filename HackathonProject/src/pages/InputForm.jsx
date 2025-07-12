@@ -27,7 +27,7 @@ const InputForm = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:3000/api/v1/roadmap/generate",
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/roadmap/generate`,
         { goal, level, skills, availableTime, duration },
         { headers: { authorization: token } }
       );

@@ -34,7 +34,7 @@ const CompleteProfile = () => {
     setGlobalError("");
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:3000/api/v1/oauth/set-username", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/oauth/set-username`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -32,7 +32,7 @@ const AdminPage = () => {
     const token = localStorage.getItem("token"); // adjust if stored differently
 
     try {
-      const response = await fetch("http://localhost:3000/api/v1/admin/roadmap", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/admin/roadmap`, {
         method: "POST",
         headers: {
           

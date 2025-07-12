@@ -21,7 +21,7 @@ const Profile = () => {
 
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:3000/api/v1/user/profile", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/profile`, {
           headers: { authorization: token }
         });
         setUserStats(res.data);

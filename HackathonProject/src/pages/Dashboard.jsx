@@ -16,7 +16,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      const res = await axios.get(`http://localhost:3000/api/v1/roadmap/${roadmapId}`, {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/roadmap/${roadmapId}`, {
         headers: { Authorization: token },
       });
 
@@ -36,7 +36,7 @@ const Dashboard = () => {
   const handleAction = async (action, title = null) => {
     try {
       const token = localStorage.getItem("token");
-      const endpoint = `http://localhost:3000/api/v1/roadmap/${action}`;
+      const endpoint = `${import.meta.env.VITE_BACKEND_URL}/api/v1/roadmap/${action}`;
       const payload = title ? { title, roadmapId } : { roadmapId };
 
       const res = await axios.post(endpoint, payload, {
