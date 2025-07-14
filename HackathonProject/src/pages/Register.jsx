@@ -97,35 +97,21 @@ const RegisterPage = () => {
   ];
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-
-      <main className="flex-1 flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-white py-8">
-        {(loading ? <div className="flex justify-center items-center h-full">
-            <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-blue-600 border-solid"></div>
-          </div> : 
+      <main className="flex-1 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-white py-8">
         <div className="w-full max-w-md px-6">
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-6 space-y-6 dark:border dark:border-gray-700">
             <header className="text-center space-y-2">
               <div className="flex justify-center items-center gap-3">
-                <img
-                  className="w-8 h-8"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-                  alt="logo"
-                />
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                  Sign Up Here
-                </h2>
+                <img className="w-8 h-8" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo" />
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Sign Up Here</h2>
               </div>
-              <h1 className="text-xl font-bold text-gray-800 dark:text-white">
-                Create an account
-              </h1>
+              <h1 className="text-xl font-bold text-gray-800 dark:text-white">Create an account</h1>
             </header>
 
             {globalError && (
-              <div className="text-center text-red-600 text-sm font-medium">
-                {globalError}
-              </div>
+              <div className="text-center text-red-600 text-sm font-medium">{globalError}</div>
             )}
 
             <GoogleLoginButton />
@@ -144,32 +130,35 @@ const RegisterPage = () => {
 
               <button
                 type="submit"
-                className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 
+                disabled={loading}
+                className={`w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 
                 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm 
                 px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 
-                dark:focus:ring-blue-800"
+                dark:focus:ring-blue-800 ${loading ? "opacity-60 cursor-not-allowed" : ""}`}
               >
-                Register
+                {loading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                    Registering...
+                  </div>
+                ) : (
+                  "Register"
+                )}
               </button>
 
               <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
                 Already have an account?{" "}
-                <a
-                  href="/signin"
-                  className="font-medium text-blue-600 hover:underline"
-                >
+                <a href="/signin" className="font-medium text-blue-600 hover:underline">
                   Login here
                 </a>
               </p>
             </form>
           </div>
-        </div> )}
+        </div>
       </main>
 
-      <footer className="mt-auto py-6 bg-slate-400 dark:bg-gray-900">
-        <p className="text-center dark:text-white">
+      <footer className="mt-auto py-6 bg-slate-400 dark:bg-gray-900 text-center dark:text-white">
           © 2025 RoadMapr. All rights reserved.
-        </p>
       </footer>
     </div>
   );

@@ -7,10 +7,19 @@ const GoogleLoginButton = () => {
     <button
       type="button"
       onClick={handleGoogleLogin}
-      className="w-full flex items-center justify-center gap-2 text-black dark:text-white bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-600 dark:hover:bg-gray-700 "
+      className="
+        w-full px-4 py-2 sm:px-6 sm:py-2.5
+        flex items-center justify-center gap-2
+        text-sm sm:text-base font-medium
+        text-black dark:text-white
+        bg-gray-200 hover:bg-gray-300
+        dark:bg-gray-600 dark:hover:bg-gray-700
+        focus:outline-none focus:ring-2 focus:ring-red-300
+        rounded-lg transition duration-200 ease-in-out
+      "
     >
-      <img src="/google_logo.jpeg" alt="G" className="w-5 h-5 rounded-full " />
-      Login with Google
+      <img src="/google_logo.jpeg" alt="Google" className="w-5 h-5 rounded-full" />
+      <span>Login with Google</span>
     </button>
   );
 };
