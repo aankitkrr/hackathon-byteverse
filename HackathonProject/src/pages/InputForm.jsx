@@ -54,9 +54,9 @@ const InputForm = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-800 text-white">
       <Navbar />
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-800 text-white flex items-center justify-center p-6">
+      <main className="flex-grow flex items-center justify-center p-4 sm:p-6">
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-2xl bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg space-y-6"
@@ -71,7 +71,7 @@ const InputForm = () => {
             type="select"
             value={goal}
             onChange={(e) => setGoal(e.target.value)}
-            options={["SDE", "Data Analyst", "Web Developer", "AI/ML Enthusiast"]}
+            options={["Software Developer", "Data Analyst", "Full Stack Developer", "AI/ML Enthusiast", "Blockchain Developer"]}
             placeholder="Select your goal"
           />
 
@@ -89,7 +89,7 @@ const InputForm = () => {
             <label className="block mb-2 text-sm text-gray-900 dark:text-white font-semibold">
               Current Skills
             </label>
-            <div className="w-full p-3 mb-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-600 flex flex-wrap gap-2">
+            <div className="w-full p-3 mb-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-600 flex flex-wrap gap-2 max-h-32 overflow-y-auto">
               {skills.length === 0 && (
                 <span className="text-gray-400 dark:text-gray-500">No skills added yet</span>
               )}
@@ -142,9 +142,7 @@ const InputForm = () => {
           <div className="text-center">
             <Button
               type="submit"
-              className={`px-6 py-3 mt-4 inline-flex items-center justify-center gap-2 ${
-                loading ? "cursor-not-allowed opacity-70" : ""
-              }`}
+              className={`w-full sm:w-auto px-6 py-3 mt-4 inline-flex items-center justify-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed`}
               disabled={!isLoggedIn || loading}
             >
               {loading && (
@@ -160,7 +158,7 @@ const InputForm = () => {
             )}
           </div>
         </form>
-      </div>
+      </main>
     </div>
   );
 };

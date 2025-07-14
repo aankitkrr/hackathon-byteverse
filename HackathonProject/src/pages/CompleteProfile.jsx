@@ -71,9 +71,9 @@ const CompleteProfile = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-1 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-white py-12">
-        <div className="w-full max-w-md px-6">
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-6 space-y-6 dark:border dark:border-gray-700">
+      <main className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center px-4 sm:px-6 py-12 text-gray-800 dark:text-white">
+        <div className="w-full max-w-md">
+          <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 sm:p-8 space-y-6 dark:border dark:border-gray-700">
             <h2 className="text-2xl font-bold text-center">Complete Your Profile</h2>
 
             {globalError && (
@@ -112,7 +112,7 @@ const CompleteProfile = () => {
           </div>
         </div>
       </main>
-      <footer className="mt-auto py-6 bg-slate-400 dark:bg-gray-900 text-center text-white">
+      <footer className="w-full py-6  bg-slate-400 dark:bg-gray-900 text-center text-white">
         © 2025 RoadMapr. All rights reserved.
       </footer>
     </div>

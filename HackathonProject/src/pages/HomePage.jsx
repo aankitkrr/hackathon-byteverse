@@ -21,8 +21,9 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
       <Navbar />
+      <main className="flex-grow">
       <section className="flex flex-col items-center justify-center text-center py-20 px-4 bg-blue-500 dark:bg-gray-800 relative">
         <div className="absolute inset-0 bg-black opacity-30 backdrop-blur-sm"></div>
         <div className="relative z-10 max-w-3xl">
@@ -32,7 +33,7 @@ const HomePage = () => {
           <p className="text-lg md:text-xl mb-6 text-white">
             Whether you're just starting out or want to switch careers — we’ll guide you step by step.
           </p>
-          <Button onClick={handleContinueLearning} className="text-sm px-6 py-3 rounded-full">
+          <Button onClick={handleContinueLearning} className="text-sm px-6 py-3 rounded-full w-full sm:w-auto">
             Continue Learning
           </Button>
         </div>
@@ -55,7 +56,7 @@ const HomePage = () => {
 
       <section className="py-16 px-4 bg-gray-200 dark:bg-gray-900">
         <h2 className="text-3xl font-bold text-center mb-10 transition hover:scale-[1.04]">Popular Roadmaps</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {popularRoadmaps.map((roadmap, i) => (
             <div
               key={i}
@@ -69,12 +70,12 @@ const HomePage = () => {
           ))}
         </div>
         <div className="flex justify-center mt-10">
-          <Button onClick={handleStartLearning} className="text-sm px-6 py-3 rounded-full">
+          <Button onClick={handleStartLearning} className="text-sm px-6 py-3 rounded-full w-full sm:w-auto">
             Start Learning
           </Button>
         </div>
       </section>
-
+      </main>
       <footer className="mt-auto py-6 bg-slate-400 dark:bg-gray-900 text-center">
         <p className="dark:text-white">©️ 2025 RoadMapr. All rights reserved.</p>
       </footer>

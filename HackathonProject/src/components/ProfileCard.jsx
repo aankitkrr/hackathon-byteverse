@@ -1,30 +1,22 @@
 const ProfileCard = ({ name, email, avatar, bio }) => {
   return (
-    <div className="flex items-center gap-6 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md w-full max-w-xs">
+    <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition hover:shadow-xl">
       <img
         src={avatar}
         alt={name}
-        className="w-20 h-20 rounded-full object-cover shadow-sm"
+        className="w-24 h-24 rounded-full object-cover border-4 border-blue-500 dark:border-blue-400 shadow-md"
       />
 
-      <div className="flex-1 min-w-0 ">
-        <div className="relative group">
-          <h2 className="text-lg font-bold text-gray-800 dark:text-white truncate w-full">
-            {name}
-          </h2>
-          <div className="absolute left-0 top-full mt-1 w-max max-w-xs text-xs bg-black text-white px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            {name}
-          </div>
-        </div>
+      <h2 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">{name}</h2>
+      <p className="text-sm text-gray-500 dark:text-gray-300 mt-1">{email}</p>
 
-        <div className="relative group">
-          <p className="text-sm text-gray-500 dark:text-gray-300 truncate w-full">
-            {email}
-          </p>
-          <div className="absolute left-0 top-full mt-1 w-max max-w-xs text-xs bg-black text-white px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            {email}
-          </div>
-        </div>
+      {bio && (
+        <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 px-4">{bio}</p>
+      )}
+
+      <div className="mt-4 flex space-x-4">
+        <button className="text-sm font-medium text-blue-600 hover:underline">View Profile</button>
+        <button className="text-sm font-medium text-red-500 hover:underline">Logout</button>
       </div>
     </div>
   );

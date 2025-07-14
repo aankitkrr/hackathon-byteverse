@@ -56,10 +56,11 @@ const Dashboard = () => {
       <div className="min-h-screen px-4 py-8 bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-white">
         <h2 className="text-3xl font-bold text-center mb-6">Your Learning Progress</h2>
 
-        <div className="flex justify-center gap-6 mb-10 flex-wrap">
+        <div className="grid gap-4 sm:grid-cols-2 justify-center max-w-xl mx-auto mb-10">
           <StatCard title="XP Earned" value={totalXP} />
           <StatCard title="Total Levels" value={progressData.length} />
         </div>
+
 
         {loading ? (
           <div className="flex justify-center items-center h-[60vh]">
@@ -67,12 +68,17 @@ const Dashboard = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center space-y-6">
-            <Button onClick={() => handleAction("reset")}
-              className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-white">
-              Reset Progress
-            </Button>
+            <div className="flex justify-center mb-8">
+              <Button
+                onClick={() => handleAction("reset")}
+                className="bg-red-600 hover:bg-red-700 px-5 py-2 text-white rounded text-sm sm:text-base"
+              >
+                Reset Progress
+              </Button>
+            </div>
 
-            <div className="flex flex-wrap gap-6 justify-center mt-4">
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mt-4 px-4">
               {progressData.map((step, index) => (
                 <ProgressCard
                   key={index}
@@ -84,6 +90,7 @@ const Dashboard = () => {
                 />
               ))}
             </div>
+
           </div>
         )}
       </div>

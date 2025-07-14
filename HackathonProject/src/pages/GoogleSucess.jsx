@@ -21,24 +21,25 @@ const GoogleSuccess = () => {
         console.error("Token error", err);
         toast.error("Failed to log in");
         navigate("/signin");
+      } finally {
+        setLoading(false);
       }
     } else {
       toast.error("Missing token in URL");
       navigate("/signin");
+      setLoading(false);
     }
-
-    setLoading(false);
   }, [navigate, setIsLoggedIn]);
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center text-xl text-gray-800 dark:text-white">
+    <div className="min-h-screen flex flex-col justify-center items-center text-gray-800 dark:text-white px-4">
       {loading ? (
         <>
-          <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-blue-600 border-solid mb-4"></div>
-          <p>Logging you in via Google...</p>
+          <div className="animate-spin h-12 w-12 border-4 border-blue-500 border-t-transparent rounded-full mb-4"></div>
+          <p className="text-lg font-medium">Logging you in via Google...</p>
         </>
       ) : (
-        <p>Redirecting...</p>
+        <p className="text-lg font-medium animate-pulse">Redirecting...</p>
       )}
     </div>
   );
